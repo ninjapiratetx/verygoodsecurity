@@ -25,11 +25,17 @@ steps:
 4) call the get request with the same request with parama with userId = 1 (expected results: a list of post with userId == 1)
 5) compare the list 3 to 4 (expected results: they match)
 
-next the post
-For this test we do a post with a test body,  Verify the post sent the right things, then compare it to the last one in the list since the post added to it.  This is failing due to the list not updating with the value from the post.  This may or may not be a bug due to the way the setup is.  The post is not being added.  This is an issue which I would then discuss with the developers
+next the post request
+Do 
 steps:
+Verify the post sent the a result that match the name, body, and userId.
 1) get the last post in posts (expected results: a post that is the last post on the list)
 2) post to the server with name = test, body = test test, userId = 1 (expected results: a post call with name,body,userId and id)
 3) compare the result in 2 with name = test, body = test test userId =1 and id = the post id in step 1 + 1(expected results: they all match)
-4) get the last post in posts (expected results: a post this is the last post on the list)
-5) compare the results in step 2 to the results in step 4 (expected results: they match) (currently step 1 matches step 4, it appears not to be added to the list.  This may or may not be a bug)
+
+next the post is update on the list:
+For this test we do a post with a test values, then compares them to the last one add to the list which should match.   This is failing due to the list not updating with the value from the post.  This may or may not be a bug due to the way the setup is.  The post is not being added.  This is an issue which I would then discuss with the developers
+steps:
+1) post to the server with name = test, body = test test, userId = 1 (expected results: a post call with name,body,userId and id)
+2) get the last post in posts (expected results: a post this is the last post on the list)
+3) compare the results in step 2 to the results in step 4 (expected results: they match) (currently step 1 matches step 4, it appears not to be added to the list.  This may or may not be a bug)
