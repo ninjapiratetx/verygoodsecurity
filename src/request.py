@@ -1,9 +1,9 @@
 from tkinter import W
 from urllib import response
 import requests
-from src.static_values import API_CALL, BODY, HTTP_SUCCESS, HTTP_SUCCESS_POST, ID, NAME, TEST_USERID, URI, USERID 
+from src.static_values import API_CALL, BODY, HTTP_SUCCESS, HTTP_SUCCESS_POST, ID, NAME, POST_URI, TEST_USERID, URI, USERID 
 
-POST_URI = f"{URI}{API_CALL}"
+
 
 def get_all_posts():
     response = requests.get(POST_URI)
