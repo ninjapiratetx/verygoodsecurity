@@ -10,6 +10,7 @@ def test_get_post_by_id():
         
 def test_get_all_post_by_id():
     json_of_results = get_all_posts()
+    cnt = 0
     for res in json_of_results:
         id = res[ID]
         json_of_res = get_post_by_id(id)
