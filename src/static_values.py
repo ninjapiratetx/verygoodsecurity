@@ -1,17 +1,16 @@
-from tkinter import W
-
-from test.test_get_post import test_get_post_by_id
-
-
 HTTP_SUCCESS = 200
 HTTP_SUCCESS_POST = 201
 URI = "https://jsonplaceholder.typicode.com/"
 API_CALL = "posts"
 POST_URI = f"{URI}{API_CALL}"
 ID = "id"
-NAME = "name"
+TITLE = "title"
 BODY = "body"
 USERID = "userId"
-TEST_USERID = 1
-TEST_NAME = "test"
+TEST_USERID = 1 
+TEST_ID = 1
+TEST_TITLE_HARDCODED = "sunt aut facere repellat provident occaecati excepturi optio reprehenderit" 
+TEST_BODY_HARDCODED =  "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+TEST_TITLE = "test"
 TEST_BODY = "test test"
+SIZE_OF_USERID_1 = 10

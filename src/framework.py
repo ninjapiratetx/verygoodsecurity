@@ -1,9 +1,5 @@
-from tkinter import W
-from urllib import response
+from src.static_values import BODY, HTTP_SUCCESS, HTTP_SUCCESS_POST, ID, TITLE, POST_URI, USERID 
 import requests
-from src.static_values import API_CALL, BODY, HTTP_SUCCESS, HTTP_SUCCESS_POST, ID, NAME, POST_URI, TEST_USERID, URI, USERID 
-
-
 
 def get_all_posts():
     response = requests.get(POST_URI)
@@ -28,20 +24,8 @@ def get_post_by_query_id(queryId):
     return get_post_by_params(paramaters)
 
 def post_the_post(name,body,userId):
-    post_json = {NAME:name, BODY:body, USERID:userId}
+    post_json = {TITLE:name, BODY:body, USERID:userId}
     response = requests.post(POST_URI,json=post_json)
     assert response.status_code == HTTP_SUCCESS_POST
     return response.json()
 
-def compare_posts_to_each_query():
-    json_of_results = get_all_posts()
-    for res in json_of_results:
-        id = res[ID]
-        json_of_res = get_post_by_id(id)
-        assert json_of_res == [res]
-
-def compare_all_same_user_id_1():
-    json_of_results = get_all_posts()
-    json_of_query_1 = [res for res in json_of_results if res[USERID] == 1]
-    json_of_query_from_call_1 = get_post_by_query_id(TEST_USERID) 
-    assert json_of_query_from_call_1 == json_of_query_1
