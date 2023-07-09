@@ -28,7 +28,13 @@ steps:
 1) call get requwst wirh params userId = 1 (expected result: a list of records that match userId)
 2) compare the size of the list in 1 with 10 (expected result: The size is 10)
 
-next compare user Id:
+test_get_post_by_queryId
+for this test we are validate the request with params userId = 1 returns 10
+steps:
+1) call get requwst wirh params userId = 11 (expected result: a list of records that match userId)
+2) compare the size of the list in 1 with 10 (expected result: The size is 0)
+
+test_post_added:
 For this test we compare that for a given userid we match the results when we do a get posts with userid = 1.
 steps:
 1) get all posts (expected results: all the posts, returns a status code of 200)
@@ -45,6 +51,13 @@ steps:
 3) compare the result in 2 with name = test, body = test test userId =1 and id = the post id in step 1 + 1(expected results: they all match)
 
 test_post_added
+For this test we are testing that user id that not get posts.
+steps:
+1) get the last post in posts (expected results: a post that is the last post on the list)
+2) post to the server with title = test, body = test test, userId = 11 (expected results: a post call with name,body,userId and id)
+3) compare the result in 2 with name = test, body = test test userId =1 and id = the post id in step 1 + 1(expected results: they all match)
+
+test_post_added
 For this test we do a post with a test values, then compares them to the last one add to the list which should match.   This is failing due to the list not updating with the value from the post.  This may or may not be a bug due to the way the setup is.  The post is not being added.  This is an issue which I would then discuss with the developers
 steps:
 1) post to the server with title = test, body = test test, userId = 1 (expected results: a post call with name,body,userId and id)
@@ -52,4 +65,4 @@ steps:
 3) compare the results in step 2 to the results in step 4 (expected results: they match) (currently step 1 matches step 4, it appears not to be added to the list.  This may or may not be a bug)
 
 # the screenshots of the results
-![Alt text](/img/functionalTests.png?raw=true "getPostById.load-spec.ts")
+![Alt text](/img/functionalTests.png?raw=true "All the functional tests")

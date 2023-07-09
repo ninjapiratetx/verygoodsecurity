@@ -14,3 +14,4 @@ TEST_BODY_HARDCODED =  "quia et suscipit\nsuscipit recusandae consequuntur exped
 TEST_TITLE = "test"
 TEST_BODY = "test test"
 SIZE_OF_USERID_1 = 10
+TEST_USERID_NOT_IN_POSTS = 11
