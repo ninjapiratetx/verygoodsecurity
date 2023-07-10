@@ -1,5 +1,5 @@
 # verygoodsecurity
-this is the code for the Very Good Security code exercise.  Which is to implement a get request posts with query id and post request post.  Load testing is in a seperate project: verygoodsecurityload
+this is the code for the Very Good Security code exercise.  Which is to implement a get request posts with query id and post request post of https://jsonplaceholder.typicode.com/.  Load testing is in a seperate project: verygoodsecurityload
 
 # how to run
 from directory verygoodsecurity
